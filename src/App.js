@@ -32,7 +32,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>Inside out!</h1>
+      <h1>Click on a emoji!</h1>
       <input onChange={onChangeHandler}></input>
       <div className="heading">{inputText}</div>
 
