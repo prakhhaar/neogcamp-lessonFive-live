@@ -6,9 +6,16 @@ const emojiDictionary = {
   "😊": "Smiling",
   "💥": "Collision",
   "🤩": "Star-struck",
-  "🎖️": "Military-medal"
+  "🎖️": "Military-medal",
+  "😋": "Face savouring food",
+  "🤑": "Money face",
+  "😗": "Kissing face",
+  "⛹️": "Person bouncing ball",
+  "🥐": "Croissant",
+  "🍟": "French fries"
 };
 
+// Storing object keys in an array 
 var emojisWeKnow = Object.keys(emojiDictionary);
 
 export default function App() {
@@ -21,7 +28,7 @@ export default function App() {
     if (meaning === undefined) {
       meaning = "We don't have this in our database.";
     }
-
+    
     setInputText(meaning);
   }
 
@@ -32,14 +39,17 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>Click on a emoji!</h1>
+      <h1>Click on an emoji!</h1>
+      {/* Input handling */}
       <input onChange={onChangeHandler}></input>
       <div className="heading">{inputText}</div>
 
       <div className="heading">Emojis We know</div>
+      {/* Setting up emojis on UI using map function */}
       {emojisWeKnow.map(function (emoji) {
         return (
           <span
+            // On emoji click
             onClick={() => emojiClickHandler(emoji)}
             style={{ fontSize: "2rem", padding: "0.5rem", cursor: "pointer" }}
           >
